@@ -11,9 +11,9 @@ from wai.annotations.core.component.util import (
     ExpectsFile
 )
 from wai.annotations.domain.audio.speech import SpeechInstance
-from ..util import CoquiSTTDialect, EXPECTED_HEADER
+from ..util import CoquiSTTDialect, STT_EXPECTED_HEADER
 
-EXPECTED_HEADER_LIST = EXPECTED_HEADER.split(',')
+EXPECTED_HEADER_LIST = STT_EXPECTED_HEADER.split(',')
 
 
 class CoquiSTTWriter(

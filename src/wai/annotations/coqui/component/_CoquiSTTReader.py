@@ -7,7 +7,7 @@ from wai.annotations.core.component.util import AnnotationFileProcessor
 from wai.annotations.core.stream import ThenFunction
 from wai.annotations.domain.audio import Audio
 from wai.annotations.domain.audio.speech import SpeechInstance, Transcription
-from ..util import CoquiSTTDialect, EXPECTED_HEADER
+from ..util import CoquiSTTDialect, STT_EXPECTED_HEADER
 
 
 class CoquiSTTReader(AnnotationFileProcessor[SpeechInstance]):
@@ -28,13 +28,13 @@ class CoquiSTTReader(AnnotationFileProcessor[SpeechInstance]):
             header = file.readline()
 
             # Make sure the header is what we expect
-            if header != EXPECTED_HEADER + '\n':
-                raise ValueError(f"Expected header: {EXPECTED_HEADER}\n"
+            if header != STT_EXPECTED_HEADER + '\n':
+                raise ValueError(f"Expected header: {STT_EXPECTED_HEADER}\n"
                                  f"Seen header: {header}")
 
             # Yield rows from the file
             for row in csv.DictReader(file,
-                                      EXPECTED_HEADER.split(','),
+                                      STT_EXPECTED_HEADER.split(','),
                                       dialect=CoquiSTTDialect):
                 then(
                     SpeechInstance(
