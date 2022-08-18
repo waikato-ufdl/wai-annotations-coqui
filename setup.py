@@ -37,12 +37,13 @@ setup(
     author='Peter Reutemann',
     author_email='fracpete@waikato.ac.nz',
     install_requires=[
-        "wai.annotations.core>=0.1.7"
+        "wai.annotations.core>=0.1.8"
     ],
     entry_points={
         "wai.annotations.plugins": [
-            # Sources
-            # Sinks
+            # Speech Formats
+            "from-coqui-stt-sp=wai.annotations.coqui.specifier:CoquiSTTInputFormatSpecifier",
+            "to-coqui-stt-sp=wai.annotations.coqui.specifier:CoquiSTTOutputFormatSpecifier",
         ]
     }
 )
