@@ -29,7 +29,7 @@ class CoquiSTTWriter(
     _split_path: str = SplitState(lambda self: self.get_split_path(self.split_label, self.output_path))
 
     # The CSV writer writing to the file for the current split
-    split_writer: csv.DictWriter = SplitState(lambda self: self._init_tsv_writer())
+    split_writer: csv.DictWriter = SplitState(lambda self: self._init_csv_writer())
 
     def consume_element_for_split(
             self,
@@ -62,7 +62,7 @@ class CoquiSTTWriter(
     def _iterate_split_files(self, split_files: IO[str]) -> Iterable[ContextManager]:
         return split_files,
 
-    def _init_tsv_writer(self) -> csv.DictWriter:
+    def _init_csv_writer(self) -> csv.DictWriter:
         # Create a CSV writer using the header
         csv_writer = csv.DictWriter(self._split_files, EXPECTED_HEADER_LIST, dialect=CoquiSTTDialect)
 
