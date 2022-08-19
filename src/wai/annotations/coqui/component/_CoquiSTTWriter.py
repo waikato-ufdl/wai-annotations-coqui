@@ -42,7 +42,7 @@ class CoquiSTTWriter(
         if element.annotations is None:
             return
 
-        # Create the CommonVoice CSV row as a dictionary
+        # Create the Coqui STT CSV row as a dictionary
         instance_dict = {
             "wav_filename": element.data.filename,
             "wav_filesize": len(element.data.data),
