@@ -43,7 +43,9 @@ setup(
         "wai.annotations.plugins": [
             # Speech Formats
             "from-coqui-stt-sp=wai.annotations.coqui.specifier:CoquiSTTInputFormatSpecifier",
+            "from-coqui-tts-sp=wai.annotations.coqui.specifier:CoquiTTSInputFormatSpecifier",
             "to-coqui-stt-sp=wai.annotations.coqui.specifier:CoquiSTTOutputFormatSpecifier",
+            "to-coqui-tts-sp=wai.annotations.coqui.specifier:CoquiTTSOutputFormatSpecifier",
         ]
     }
 )
