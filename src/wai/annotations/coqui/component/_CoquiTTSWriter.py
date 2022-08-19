@@ -23,7 +23,7 @@ class CoquiTTSWriter(
     SplitSink[SpeechInstance]
 ):
     """
-    Writer of Coqui's STT speech annotation format.
+    Writer of Coqui's TTS speech annotation format.
     """
     _split_path: str = SplitState(lambda self: self.get_split_path(self.split_label, self.output_path))
 
